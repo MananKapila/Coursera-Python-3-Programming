@@ -35,7 +35,10 @@ for i in range(10, 50, 15):
 
 # Even though iterating through a range can be thought of as iterating over a list,
 # the range function does *not* return a list! It returns an iterable.
+# Iterables are Python objects that act like sequences for the purposes of iteration
+# with a for loop. These include file objects, views, and iterators.
 # In order to obtain an actual list from the range function, we need to cast its result.
 
 print(type(range(1, 3)))  # <class 'range'>
 print(type(list(range(1, 3))))  # <class 'list'>
+
