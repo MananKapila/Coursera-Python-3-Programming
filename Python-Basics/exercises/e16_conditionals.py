@@ -47,4 +47,4 @@ vowels_no = 0
 for s in string:
     if s in ['a', 'e', 'i', 'o', 'u']:
         vowels_no += 1
-print(vowels_no)    # 5
+print(vowels_no)  # 5
