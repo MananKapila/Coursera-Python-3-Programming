@@ -10,7 +10,7 @@ print(lst)  # [42, 54, 38, 13]
 # ======================
 
 # We also know that we can concatenate two lists. This can add one or more elements to the end of a list.
-# However, concatenation (done with the + sign) does NOT mutate existing lists, but creates new lists in memory.
+# However, concatenation (done with the + sign) does NOT MUTATE existing lists, but creates new lists in memory.
 con = lst + [22, 77]
 # ======= Memory =======
 # lst    ----- [42, 54, 38, 13]
@@ -79,3 +79,7 @@ print(alias)  # [0, 0, 0, 1, 2]
 # pointing to. As a consequence, this change can be seen by inspecting all aliases of lst.
 
 # We remember that the alias of a variable is another variable pointing to the same location in memory.
+
+
+# So far, everything we've seen in e21 and e22 mutates lists, except for the *count* and *index* methods
+# and concatenation.
