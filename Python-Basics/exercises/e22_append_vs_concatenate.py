@@ -34,7 +34,8 @@ print(con)  # [42, 54, 38, 13, 22, 77]
 # However, when we do this on lists, += has a completely different meaning.
 # lst += [1,2] does NOT CONCATENATE lst with [1,2] (that would create a new, longer list in memory and point lst to it)
 # Instead, it MUTATES lst by adding new elements to the existing list in memory, the one lst was already pointing to.
-# In order to better see the difference, let's analyze these two examples:
+# Basically, += behaves like the append method.
+# In order to better see the difference between + and +=, let's analyze these two examples:
 
 lst = [0, 0, 0]
 # ======= Memory =======
@@ -83,3 +84,4 @@ print(alias)  # [0, 0, 0, 1, 2]
 
 # So far, everything we've seen in e21 and e22 mutates lists, except for the *count* and *index* methods
 # and concatenation.
+# (Remember that += is NOT a concatenation.)
