@@ -82,9 +82,16 @@ def error():
 # error()  # UnboundLocalError: local variable 'my_var' referenced before assignment
 
 # As we can see, this can be pretty confusing. Therefore, a good, unwritten rule is to:
-# AVOID REFERRING TO GLOBAL VARIABLES INSIDE FUNCTION DEFINITIONS!
+# NEVER REFER GLOBAL VARIABLES INSIDE FUNCTION DEFINITIONS!
 # Even though it is legal in Python, it's not a good idea. Instead, just use parameters, if you want to get outside
 # variable inside functions.
+
+# As the Coursera textbook says:
+# "It is legal for a function to access a global variable. However, this is considered bad form by nearly all
+# programmers and should be avoided.
+# This section included some examples that illustrate the potential interactions of global and local variables.
+# These help you understand exactly how python works. Hopefully, they also convinced you that things can get pretty
+# confusing when you mix local and global variables, and that you really shouldn't do it. "
 
 
 # Technically, there IS one way of assigning values to global variables in functions.
@@ -100,3 +107,5 @@ def chaning_a_global_variable():
 print(my_var)  # 1
 chaning_a_global_variable()
 print(my_var)  # 15
+
+# Generally, MAKING VARIABLES GLOBAL IS CONSIDERED BAD PRACTICE!
