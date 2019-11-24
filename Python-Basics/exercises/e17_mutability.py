@@ -46,6 +46,31 @@ print(new_string)  # they cannot change me!
 # string        ----- "you cannot change me!"
 # new_string    ----- "they cannot change me!"
 # ======================
+first_str = "hello"
+second_str = first_str
+# first_str and second_str initially point to the same the same location in memory.
+print(id(first_str) == id(second_str))  # True
+# ======= Memory =======
+# first_str     ----- "hello"
+# second_str    ____/
+# ======================
+second_str = "goodbye"
+# But after this assignment, only second_str will point to "goodbye". The two references will point to different strings
+# in memory.
+print(first_str)  # hello
+print(second_str)  # goodbye
+# ======= Memory =======
+# first_str     ----- "hello"
+# second_str    ----- "goodbye"
+# ======================
+print(id(first_str) == id(second_str))  # False
+
+# The same goes with numbers.
+a = -3
+b = a
+b = 10
+print(a)  # -3
+print(b)  # 10
 
 # Tuples are immutable.
 # As with strings, if we try to use item assignment to modify one of the elements of a tuple, we get an error.

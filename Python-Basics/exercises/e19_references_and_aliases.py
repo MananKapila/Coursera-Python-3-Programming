@@ -10,7 +10,7 @@ b = "hello"
 # The *is* operator verifies whether two references point to the same object/location in memory
 # (aka the two references are aliases of each other).
 print(a is b)  # True
-# The *id* function prints a unique identified of the object a reference is pointing towards
+# The *id* function prints a unique identifier of the object the reference is pointing towards
 # (based on the object's location in memory).
 print(id(a))  # 2034429399792
 print(id(b))  # 2034429399792
