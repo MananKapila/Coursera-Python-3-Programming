@@ -84,3 +84,31 @@ if response == 'Y':
     print('Great! They are very healthy.')
 else:
     print('Too bad. If cooked right, they are quite tasty.')
+
+
+# We can break out of the while loop by using the *break* keyword:
+while True:
+    print("this phrase will always print")
+    break
+    print("Does this phrase print?")
+
+print("We are done with the while loop.")
+# this phrase will always print
+# We are done with the while loop.
+
+# We can tell the while loop to ignore the rest of the current iteration and jump to the next iteration by using the
+# *continue* keyword:
+x = 0
+while x < 10:
+    print("we are incrementing x")
+    if x % 2 == 0:
+        x += 3
+        continue
+    if x % 3 == 0:
+        x += 5
+    x += 1
+print("Done with our loop! X has the value: " + str(x))
+# we are incrementing x
+# we are incrementing x
+# we are incrementing x
+# Done with our loop! X has the value: 15
