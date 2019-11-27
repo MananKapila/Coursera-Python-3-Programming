@@ -1,3 +1,6 @@
+# Formal parameters are usually simply called "parameters". They reside in the function definition.
+# Actual parameters are usually called "arguments". They are found in a function call.
+
 # In the treatment of functions so far, each function definition specifies zero or more formal parameters and each
 # function invocation provides exactly that many values. Sometimes it is convenient to have optional parameters that
 # can be specified or omitted. When an optional parameter is omitted from a function invocation, the formal parameter
@@ -35,7 +38,6 @@ f(2, 5, 8)  # x, y, z, are: 2, 5, 8
 # second item (y).
 # We will see in the next section a mechanism called keyword parameters that lets you specify a value
 # for z without specifying a value for y.
-# TODO
 
 # There are two things to be careful about, when dealing with optional parameters:
 
@@ -70,3 +72,16 @@ print(f(2))  # [1, 2]
 print(f(3))  # [1, 2, 3]
 print(f(4, ["Hello"]))  # ['Hello', 4]
 print(f(5, ["Hello"]))  # ['Hello', 5]
+
+
+# OPTIONAL PARAMETERS MUST ALWAYS FOLLOW NON-OPTIONAL PARAMETERS!
+
+# Defining this function will result in a runtime error: SyntaxError: non-default argument follows default argument
+# def g(x=1, y, z=3):
+#     print("x = {} , y = {} , z = {} ".format(x, y, z))
+# This does not work either:
+# def g(x=1,  z=3, y):
+#     print("x = {} , y = {} , z = {} ".format(x, y, z))
+# This is the way to go:
+def g(x, y=2, z=3):
+    print("x = {} , y = {} , z = {} ".format(x, y, z))
