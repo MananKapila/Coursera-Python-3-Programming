@@ -1,8 +1,8 @@
-# In the previous section, on Optional Parameters you learned how to define default values for formal parameters, which
+# In the previous section, on Optional Parameters we learned how to define default values for formal parameters, which
 # made it optional to provide values for those parameters when invoking the functions.
 
-# In this chapter, you’ll see one more way to invoke functions with optional parameters, with keyword-based argument
-# passing. This is particularly convenient when there are several optional parameters and you want to provide a value
+# In this chapter, we’ll see one more way to invoke functions with optional parameters, with keyword-based argument
+# passing. This is particularly convenient when there are several optional parameters and we want to provide a value
 # for one of the later parameters while not providing a value for the earlier ones.
 
 # Let's review the following example, where we have two consecutive optional parameters:
@@ -43,3 +43,30 @@ f(x=1, y=2, z=3)  # x = 1 , y = 2 , z = 3
 f(z=3, y=2, x=1)  # x = 1 , y = 2 , z = 3
 
 # Keyword arguments must always follow positional arguments.
+
+
+########################################################################################################################
+# Keyword arguments with .format
+########################################################################################################################
+
+# Now that we’ve learned about optional and keyword parameters, we can introduce a new way to use the format method.
+# This other option is to specifically refer to keywords for interpolation values, like below.
+names_scores = [("Jack", [67, 89, 91]), ("Emily", [72, 95, 42]), ("Taylor", [83, 92, 86])]
+for name, scores in names_scores:
+    print("The scores {nm} got were: {s1},{s2},{s3}.".format(nm=name, s1=scores[0], s2=scores[1], s3=scores[2]))
+
+# Sometimes, we may want to use the .format method to insert the same value into a string multiple times. We can do
+# this by simply passing the same string into the format method, assuming we have included {}s in the string
+# everywhere we want to interpolate them.
+# But we can also use positional passing references to do this! The order in which we pass arguments into the format
+# method matters: the first one is argument 0, the second is argument 1, and so on.
+# For example:
+# this works
+names = ["Jack", "Jill", "Mary"]
+for n in names:
+    print("'{}!' she yelled. '{}! {}, {}!'".format(n, n, n, "say hello"))
+
+# but this also works!
+names = ["Jack", "Jill", "Mary"]
+for n in names:
+    print("'{0}!' she yelled. '{0}! {0}, {1}!'".format(n, "say hello"))
