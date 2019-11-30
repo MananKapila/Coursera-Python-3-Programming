@@ -28,20 +28,6 @@ print(sorted(l, key=abs))  # [2, -3, 16, 33, -54] - this is what we want
 print(sorted(l, key=abs, reverse=True))  # [-54, 33, 16, -3, 2]
 
 # Example 2 ============================================================================================================
-# Suppose we have a dictionary with strings as the keys and numbers as the values.
-d = {"hey": 3, "there": 5, "guys": 4}
-print(sorted(d))  # ['guys', 'hey', 'there']
-
-
-# Instead of sorting the dictionary keys in alphabetic order, we might like to sort them based on their values.
-# We therefore have to define a function which returns the value of a key in our dictionary:
-def key_value(k):
-    return d[k]
-
-
-print(sorted(d, key=key_value))  # ['hey', 'guys', 'there']
-
-# Example 3 ============================================================================================================
 # Below, we have provided a list of strings called nums.
 nums = ['1450', '33', '871', '19', '14378', '32', '1005', '44', '8907', '16']
 
@@ -56,7 +42,7 @@ def last_char(s):
 nums_sorted = sorted(nums, key=last_char)
 print(nums_sorted)  # ['1450', '871', '32', '33', '44', '1005', '16', '8907', '14378', '19']
 
-# Example 4 ============================================================================================================
+# Example 3 ============================================================================================================
 # As we learned in e16, we can use anonymous functions using lambda expressions.
 # Let's solve the previous exercise by using an anonymous function instead.
 
