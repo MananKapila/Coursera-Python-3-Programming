@@ -38,3 +38,5 @@ print(type(lf))  # <class 'function'>
 print(lf(1))  # 2
 # We can see that the two are essentially the same.
 
+# An important observation is that Python does not allow multi-line lambda expressions, because they would clash,
+# syntactically, with the other syntax constructs in Python.
