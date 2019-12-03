@@ -14,6 +14,7 @@ print(lst.sort())  # None
 lst = ["i", "have", "great", "news", "for", "you"]
 print(sorted(lst))  # ['for', 'great', 'have', 'i', 'news', 'you']
 print(lst)  # ['i', 'have', 'great', 'news', 'for', 'you']
+# We notice that for lists of strings, the implicit sorting order is the alphabetical order.
 
 # In general, we will use the sorted() function instead of the .sort() method, because it's safer. We've previously
 # emphasized how confusing things can get when we use mutating operations.
