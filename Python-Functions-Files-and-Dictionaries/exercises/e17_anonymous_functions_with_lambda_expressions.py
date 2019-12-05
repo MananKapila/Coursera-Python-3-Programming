@@ -40,3 +40,5 @@ print(lf(1))  # 2
 
 # An important observation is that Python does not allow multi-line lambda expressions, because they would clash,
 # syntactically, with the other syntax constructs in Python.
+# Therefore, we should and (kinda have to) only use lambda expressions for relatively basic logic. Any kind of logic
+# that begins to seem complex should be extracted into a proper function.
