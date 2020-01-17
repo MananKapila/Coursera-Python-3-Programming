@@ -31,3 +31,17 @@ page = requests.get("https://api.datamuse.com/words", params=kval_pairs)
 print(page.text[:50])  # [{"word":"money","score":4415,"numSyllables":2},{"
 # We print the url that was fetched:
 print(page.url)  # https://api.datamuse.com/words?rel_rhy=funny
+
+# Unfortunately, if the call to requests.get produces an error, we won’t get a Response object, so we’ll need some
+# other way to see what URL was produced. The function defined below takes the same parameters as requests.get and
+# returns the URL as a string, without trying to fetch it.
+
+def requestURL(baseurl, params = {}):
+    # This function accepts a URL path and a params diction as inputs.
+    # It calls requests.get() with those inputs,
+    # and returns the full URL of the data you want to get.
+    req = requests.Request(method = 'GET', url = baseurl, params = params)
+    prepped = req.prepare()
+    return prepped.url
+
+# print(requestURL(some_base_url, some_params_dictionary))
