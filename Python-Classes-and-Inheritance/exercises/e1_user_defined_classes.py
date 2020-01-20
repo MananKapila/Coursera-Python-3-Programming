@@ -51,6 +51,12 @@ class Point:
 p = Point()  # Instantiate an object of type Point
 q = Point()  # and make a second point
 
+#  On each of the previous two rows, an instance of the class has been created, and is passed as the first (and only
+#  parameter) to the __init__ method. That method’s code is executed, with the variable self bound to that instance.
+#  As a result, two instance variables are filled in: x and y are both set to 0. Nothing is returned from the __init__
+#  method, but the point object itself is returned from the call to Point(). Thus, p and q are bound to the new points
+#  that were created and initialized.
+
 print("Nothing seems to have happened with the points")
 
 # During the initialization of the objects, we created two attributes called x and y for each object, and gave them
@@ -62,6 +68,8 @@ print(p)  # <__main__.Point object at 0x0000021768518430>
 print(q)  # <__main__.Point object at 0x000002176853C880>
 
 print(p is q)  # False
+print(p == q)  # False
+
 
 # A function like Point that creates a new object instance is called a constructor. Every class automatically uses the
 # name of the class as the name of the constructor function. The definition of the constructor function is done when
@@ -73,5 +81,26 @@ print(p is q)  # False
 # the object properly set up with it’s factory default settings.
 
 
+# The combined process of “make me a new object” and “get its settings initialized to the factory default settings”
+# is called instantiation.
 
-# The combined process of “make me a new object” and “get its settings initialized to the factory default settings” is called instantiation.
+
+# Note: unlike Java, in Python we can omit the constructor of a class and still be able to instantiate the respective
+# class. See for yourself:
+# (If we want to leave the definition of a class empty, we must use the pass keyword, because Python requires at least
+# one indented block under the class header)
+
+
+class Magic:
+    pass
+
+
+m = Magic()
+print(id(m))  # 139756169763696
+# Everything works here, no error is thrown!
+
+# Note: Moreover, in Python we can write and read from class properties that were not even previously defined:
+
+m.name = "mr magic johnson"
+print(m.name)  # mr magic johnson
+# Again, nothing wrong here.
