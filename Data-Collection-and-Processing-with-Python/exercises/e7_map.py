@@ -30,3 +30,32 @@ print(list(doubles))  # [2,4,6]
 print(numbers)  # [1, 2, 3] - we notice that the original list remained the same
 doubles = map(lambda x: 2 * x, numbers)
 print(list(doubles))  # [2, 4, 6]
+
+# One disadvantage of iterators is that after we iterate over all their elements, we cannot get anything from them
+# anymore (we can't loop over them again). Because of this, whenever we need to iterate over an iterator multiple
+# times, we should turn it into a list.
+# (By the way, the conversion of an iterator into a list already "exhausts" the iterator by accessing all of its
+# elements behind the scenes. This renders the iterator useless, as it can't provide anything anymore. That's why the
+# second time we convert an iterator into a list, the result is an empty list).
+
+vars = [1, 2, 3, 4]
+a_map = map(lambda x: x * 2, vars)
+list_from_map = list(a_map)
+print(list_from_map)  # [2, 4, 6, 8]
+second_list_from_map = list(a_map)
+print(second_list_from_map)  # []
+
+import collections.abc
+
+# Side note: mind the difference between an iterator and an iterable!
+print(isinstance(a_map, collections.abc.Iterator))  # True
+# print(map_result[0]) - we would get a TypeError: 'map' object is not subscriptable
+print(isinstance(list_from_map, collections.abc.Iterator))  # False
+
+print(isinstance(a_map, collections.abc.Iterable))  # True
+print(isinstance(list_from_map, collections.abc.Iterable))  # True
+
+# Quote: "Iterable is an object, which one can iterate over. It generates an Iterator when passed to iter() method.
+# Iterator is an object, which is used to iterate over an iterable object using __next__() method. Iterators have
+# __next__() method, which returns the next item of the object."
+# (https://www.geeksforgeeks.org/python-difference-iterable-iterator/)

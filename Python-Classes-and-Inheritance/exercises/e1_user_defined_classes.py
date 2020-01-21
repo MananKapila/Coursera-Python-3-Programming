@@ -32,6 +32,10 @@ class Point:
         self.y = 0
 
 
+# We notice that the class properties we used in the constructor didn't need to be defined anywhere else inside the
+# class. Actually, as we'll see later, class properties don't even need to be defined in the constructor (or elsewhere
+# inside the class) to be used anywhere in the program.
+
 # Class definitions can appear anywhere in a program, but they are usually near the beginning (after the import
 # statements). The syntax rules for a class definition are the same as for other compound statements. There is a header
 # which begins with the keyword, class, followed by the name of the class, and ending with a colon.
@@ -99,8 +103,39 @@ m = Magic()
 print(id(m))  # 139756169763696
 # Everything works here, no error is thrown!
 
-# Note: Moreover, in Python we can write and read from class properties that were not even previously defined:
+# Note: Moreover, in Python we can write and read from class properties that were not previously defined (not even in
+# the constructor)
 
 m.name = "mr magic johnson"
 print(m.name)  # mr magic johnson
+
+
 # Again, nothing wrong here.
+
+# We can even do this too:
+
+
+class MagicTwo:
+    # All methods inside a class that operate on objects of that class (aka instance methods) have at least one
+    # argument in their definition - the class instance (self). However, this argument does not ever need to be passed
+    # as a parameter when the method is called (Python passes it automatically)
+    def getX(self):
+        return self.x
+
+
+m2 = MagicTwo()
+m2.x = 45
+print(m2.getX())  # 45
+
+
+# We can, of course, add more parameters to constructors:
+
+class SmartPoint:
+    def __init__(self, x, y):
+        self.x = x  # this is simmilar to this.x = x; in Java constructors
+        self.y = y
+
+
+sp = SmartPoint(3, 4)
+print(sp.x)  # 3
+print(sp.y)  # 4
