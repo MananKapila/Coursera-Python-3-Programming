@@ -82,3 +82,4 @@ class Animal:
 
 spider = Animal(4, 4)
 spidlimbs = spider.limbs()
+print(spidlimbs)  # 8
