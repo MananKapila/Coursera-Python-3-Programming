@@ -132,3 +132,16 @@ print(Dog.sounds)  # ['...', 'bark']
 
 d.make_sounds()  # Sally : ... bark
 print(d)  # Sally (5 years old)
+
+
+# So what is happening in the Python interpreter when we write programs with classes, subclasses, and instances of
+# both parent classes and subclasses?
+
+# This is how the interpreter looks up attributes (variables and methods):
+#     1. First, it checks for an instance variable or an instance method by the name it’s looking for.
+#     2. If an instance variable or method by that name is not found, it checks for a class variable.
+#     3. If no class variable is found, it looks for a class variable in the parent class.
+#     4. If no class variable is found, the interpreter looks for a class variable in THAT class’s parent
+#       (the “grandparent” class).
+#     5. This process goes on until the last ancestor is reached, at which point Python will signal an error.
+
