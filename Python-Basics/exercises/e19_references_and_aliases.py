@@ -37,7 +37,7 @@ y = x
 # y    ____/ [1, 2, 3, 4]
 # ======================
 # Now, x and y are aliases.
-print(a is b)  # True
+print(x is y)  # True
 # Consequently, if we modify the object that y is pointing to, we can notice that change by inspecting x.
 y[0] = 100
 # ======= Memory =======
